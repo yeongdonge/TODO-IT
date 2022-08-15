@@ -1,24 +1,5 @@
 # vue-todo
+## demo
+<img width="569" alt="image" src="https://user-images.githubusercontent.com/72784474/184637423-211c5f57-a1b7-46e2-877c-af7f3cdbfc54.png">
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
