@@ -4,14 +4,27 @@
         <span class="addContainer" v-on:click="addTodo">
             <i class="fa-solid fa-plus addBtn"></i>
         </span>
+
+        <AlertModal v-if="showModal" @close="showModal = false">
+            <h3 slot="header">
+                경고!
+                <i class="fa-solid fa-xmark closeModalBtn" v-on:click="showModal = false"></i>
+            </h3>
+            <div slot="body">
+                할 일을 입력해주세요.
+            </div>
+
+        </AlertModal>
     </div>
 </template>
 
 <script>
+import AlertModal from './common/AlertModal.vue'
 export default {
     data: function () {
         return {
-            newTodoItem: ""
+            newTodoItem: "",
+            showModal: false
         }
     },
     methods: {
@@ -19,14 +32,18 @@ export default {
             if (this.newTodoItem !== '') {
                 this.$emit('addTodoItem', this.newTodoItem)
                 this.clearInput();
+            } else {
+                this.showModal = !this.showModal;
             }
 
         },
         clearInput: function () {
             this.newTodoItem = '';
         }
-    }
-
+    },
+    components: {
+    AlertModal: AlertModal,
+}
 }
 </script>
 
@@ -61,5 +78,28 @@ input:focus {
 .addBtn {
     color: white;
     vertical-align: middle;
+}
+.closeModelBtn {
+    color: #42b983;
+}
+
+/* List Transitiion */
+.list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.list-enter-active,
+.list-leave-active {
+    transition: all 1s;
+}
+
+.list-enter,
+.list-leave-to
+
+/* .list-leave-active below version 2.1.8 */
+    {
+    opacity: 0;
+    transform: translateY(30px);
 }
 </style>
