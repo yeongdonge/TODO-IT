@@ -8,7 +8,7 @@
 export default {
     methods: {
         clearAllTodo() {
-            this.$emit('clearTodoItem');
+            this.$store.commit('clearAllTodo');
         }
     }
 
