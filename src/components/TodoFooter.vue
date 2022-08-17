@@ -11,7 +11,6 @@ export default {
             this.$store.commit('clearAllTodo');
         }
     }
-
 }
 </script>
 

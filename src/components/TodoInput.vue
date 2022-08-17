@@ -37,7 +37,6 @@ export default {
             } else {
                 this.showModal = !this.showModal;
             }
-
         },
         clearInput() {
             this.newTodoItem = '';
