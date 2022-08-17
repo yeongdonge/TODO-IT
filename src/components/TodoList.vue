@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
+import { mapState } from 'vuex' 
 export default {
     methods:{
         removeTodo(todoItem, index) {
@@ -28,8 +29,11 @@ export default {
         // todoItems() {
         //     return this.$store.getters.storedTodoItems;
         // }
-        ...mapGetters({
-            todoItems: 'storedTodoItems',
+        // ...mapGetters({
+        //     todoItems: 'storedTodoItems',
+        // }),
+        ...mapState({
+            todoItems: 'todoItems',
         })
     }
 
