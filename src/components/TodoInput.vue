@@ -21,7 +21,7 @@
 <script>
 import AlertModal from './common/AlertModal.vue'
 export default {
-    data: function () {
+    data: () => {
         return {
             newTodoItem: "",
             showModal: false

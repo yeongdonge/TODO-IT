@@ -15,7 +15,7 @@
 
 <script>
 // import { mapGetters } from 'vuex'
-import { mapState, mapMutations } from 'vuex' 
+import { mapMutations, mapGetters } from 'vuex' 
 export default {
     methods:{
         ...mapMutations({
@@ -33,12 +33,12 @@ export default {
         // todoItems() {
         //     return this.$store.getters.storedTodoItems;
         // }
-        // ...mapGetters({
-        //     todoItems: 'storedTodoItems',
-        // }),
-        ...mapState({
-            todoItems: 'todoItems',
-        }),// 여기서는 따로 연산이 없기 떄문에, mapState가 더 좋음
+        ...mapGetters({
+            todoItems: 'storedTodoItems',
+        }),
+        // ...mapState({
+        //     todoItems: 'todoItems',
+        // }),// 여기서는 따로 연산이 없기 떄문에, mapState가 더 좋음
     }
 
 }
