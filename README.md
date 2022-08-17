@@ -1,5 +1,38 @@
-# vue-todo
-## demo
-<img width="569" alt="image" src="https://user-images.githubusercontent.com/72784474/184637423-211c5f57-a1b7-46e2-877c-af7f3cdbfc54.png">
+# TODO IT!
+>## _Tech Stack_
+>>### Vue.js 2 (2.7.1)
+>>### Vuex
+>>### Axios
+
+
+---
+## _Rineaubie?_
+- 할 일을 등록, 삭제하는 간단한 페이지 구현입니다.
+---
+## _시연화면_
+
+![시연](https://user-images.githubusercontent.com/72784474/185155646-3fa8e81e-4fd5-490d-bf88-bab2a35a391f.gif)
+
+
+### _전체적인 시연 화면입니다._
+
+---
+
+## _회고_
+```
+초기에는 ES5 및 한 컴포넌트에서 모든 기능을 구현했고, Vuex를 사용하지 않았습니다.
+이후에, 컴포넌트를 분리하고 Vuex를 올려 state 값의 추적을 수월하게 수정했습니다. 이렇게 리팩토링을 하며 어느새 App.vue는 그저 컴포넌트들만 담으면 됐고,
+여러가지 컴포넌트들은 store.js(Vuex)에 기능을 호출하면 끝입니다. 이렇게 단계적으로 거쳐가 수월함을 느끼니, 좀 더 해당 기술 코어팀의 제작팀을 이해하기 쉬웠습니다.
+```
+---
+
+## _아쉬운 점_
+- Backend 기술을 적용하지 못한 점
+
+해당 내용들은 추가 예정입니다.
+
+
+
+
 
 
