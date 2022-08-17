@@ -40,7 +40,7 @@ export default {
         },
         clearInput() {
             this.newTodoItem = '';
-        }
+        },
     },
     components: {
     AlertModal,

@@ -3,9 +3,9 @@
         <transition-group name="list" tag="ul">
             <li v-for="(todoItem, index) in this.todoItems" v-bind:key="todoItem.item" class="shadow">
                 <i class="fa-solid fa-check checkBtn" v-bind:class="{checkBtnCompleted: todoItem.completed}"
-                    v-on:click="toggleComplete(todoItem, index)"></i>
+                    v-on:click="toggleComplete({todoItem, index})"></i>
                 <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
-                <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+                <span class="removeBtn" v-on:click="removeTodo({todoItem, index})">
                     <i class="fa-solid fa-minus"></i>
                 </span>
             </li>
@@ -15,15 +15,19 @@
 
 <script>
 // import { mapGetters } from 'vuex'
-import { mapState } from 'vuex' 
+import { mapState, mapMutations } from 'vuex' 
 export default {
     methods:{
-        removeTodo(todoItem, index) {
-            this.$store.commit('removeOneItem', {todoItem, index});
-        },
-        toggleComplete(todoItem, index) {
-            this.$store.commit('toggleCompleteOneItem', {todoItem, index});
-        }
+        ...mapMutations({
+            removeTodo: 'removeOneItem',
+            toggleComplete: 'toggleCompleteOneItem',
+        }),
+    //     removeTodo(todoItem, index) {
+    //         this.$store.commit('removeOneItem', {todoItem, index});
+    //     },
+    //     toggleComplete(todoItem, index) {
+    //         this.$store.commit('toggleCompleteOneItem', {todoItem, index});
+    //     }
     },
     computed: {
         // todoItems() {
@@ -34,7 +38,7 @@ export default {
         // }),
         ...mapState({
             todoItems: 'todoItems',
-        })
+        }),// 여기서는 따로 연산이 없기 떄문에, mapState가 더 좋음
     }
 
 }
